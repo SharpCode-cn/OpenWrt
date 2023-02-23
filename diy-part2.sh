@@ -15,10 +15,3 @@ sed -i 's/192.168.1.1/192.168.2.6/g' package/base-files/files/bin/config_generat
 
 # Clear the login password
 #sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
-
-# 删除默认防火墙
-sed -i '/to-ports 53/d' "${ZZZ_PATH}"
-
-# 取消路由器跑分任务
-sed -i "/exit 0/i\sed -i '/coremark/d' /etc/crontabs/root" "${FIN_PATH}"
-
